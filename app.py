@@ -16,8 +16,9 @@ def index():
 @app.route('/login/', methods=['POST'])
 def login():
     if request.form['password'] == '123':
+        user = request.form['login']
         response = make_response(redirect('/'))
-        response.set_cookie('username', request.form['username'])
+        response.set_cookie('username', user)
         return response
 
 
