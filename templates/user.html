@@ -2,10 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Home</title>
-
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h3>Hello {{ name }}</h3>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Form Demo</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hello {{ name }}</h1>
+            <p>
+                This tutorial is meant to teach you about some basic web concepts such as HTML5, forms, requests,
+                responses, POST / GET, and cookies.
+            </p>
+            <p>
+                Additionally, this also covers some less generic concepts and specific libraries such as Flask,
+                Bootstrap, Jinja2 templates, some general Python work, and GIT. GIT, of course, is the source control
+                mechanism used for working our way through the lesson. We check out each section as marked by tags.
+                To save our work, we add items to our GIT workspace, commit changes, and then push to our 'origin'
+                repository (in our case, this is Github.com). PyCharm makes this GIT stuff easy by showing filenames
+                that haven't been added to the local GIT repo in red. If the '.gitignore' file marks a folder or file to
+                be excluded, PyCharm shows it as gray. Newly added files are shown as green, and modified files are
+                shown as blue. When you sit down to work, don't forget to pull from your origin. You might have modified
+                the code last on a different machine, or another authorized developer might have pushed a change.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Web Resources</h3>
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Python and Flask</h3>
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Git and misc</h3>
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
