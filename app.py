@@ -22,6 +22,13 @@ def login():
         return response
 
 
+@app.route('/logout/')
+def logout():
+    response = make_response(redirect('/'))
+    response.set_cookie('username', expires=0)
+    return response
+
+
 @app.route('/user/<username>')
 def get_user(username):
     return render_template('user.html', name=username)
