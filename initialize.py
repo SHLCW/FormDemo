@@ -8,7 +8,7 @@ c.execute('''
 CREATE TABLE users (
   user TEXT,
   pw TEXT
-)''')
+);''')
 
 c.execute('''
 INSERT INTO users
