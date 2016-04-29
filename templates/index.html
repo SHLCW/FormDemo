@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Home Page</title>
-    </head>
-    <body>
-        <form action="/login/" method="post">
-            User ID:<br>
-            <input type="text" name="login"><br>
-            Password:<br>
-            <input type="password" name="password"><br>
-            <input type="submit" value="Gogogo!!!">
+{% extends "layout.html" %}
+{% block title %}{{ super() }} | Landing Page {% endblock %}
+{% block body %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Form Demo</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/login/" method="post" role="form">
+            <div class="form-group">
+                <label for="username">User ID:</label>
+                <input type="text" name="login" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" name="password" class="form-control" id="pwd">
+            </div>
+            <input type="submit" class="btn btn-default">
         </form>
-    </body>
-</html>
+    </div>
+{% endblock %}
