@@ -41,4 +41,5 @@ nosetests.xml
 
 # Virtual environment
 venv
+env
 /data.db
