@@ -1,6 +1,8 @@
 import sqlite3
 
-conn = sqlite3.connect("data.db")
+# This application shouldn't use multiple threads, but the debugger for Flask will, and therefore you'll want to disable
+# checking for multiple threads.
+conn = sqlite3.connect("data.db", check_same_thread=False)
 c = conn.cursor()
 
 
@@ -11,5 +13,3 @@ def verify_password(u, p):
         return True
     else:
         return False
-
-print(verify_password('dan', '123'))

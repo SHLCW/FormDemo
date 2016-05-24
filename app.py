@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, make_response, redirect
-
+import database as db
 
 app = Flask(__name__)
 
@@ -15,10 +15,11 @@ def index():
 
 @app.route('/login/', methods=['POST'])
 def login():
-    if request.form['password'] == '123':
-        user = request.form['login']
+    u = request.form['login']
+    p = request.form['password']
+    if db.verify_password(u, p):
         response = make_response(redirect('/'))
-        response.set_cookie('username', user)
+        response.set_cookie('username', u)
         return response
 
 
@@ -35,4 +36,4 @@ def get_user(username):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
