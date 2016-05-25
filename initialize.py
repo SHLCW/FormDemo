@@ -16,3 +16,6 @@ INSERT INTO users
 VALUES
   ('dan', '123');
 ''')
+
+conn.commit()
+conn.close()
