@@ -9,9 +9,10 @@ c = conn.cursor()
 
 def verify_password(u, p):
     c.execute("SELECT pwhash FROM users WHERE user=?", (u,))
-    pw_hash = c.fetchone()[0]
-    p_hash = bcrypt.hashpw(p.encode('UTF_8'), pw_hash)
-    if p_hash == pw_hash:
-        return True
-    else:
-        return False
+    r = c.fetchone()
+    if r:
+        pw_hash = r[0]
+        p_hash = bcrypt.hashpw(p.encode('UTF_8'), pw_hash)
+        if p_hash == pw_hash:
+            return True
+    return False

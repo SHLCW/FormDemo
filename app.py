@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, make_response, redirect
 import database as db
+import time
 
 app = Flask(__name__)
 
@@ -21,6 +22,11 @@ def login():
         response = make_response(redirect('/'))
         response.set_cookie('username', u)
         return response
+    else:
+        time.sleep(3)
+        return '''<p>incorrect password</p>
+        <A HREF="javascript:javascript:history.go(-1)">Click here to go back to previous page</A>'''
+
 
 
 @app.route('/logout/')
